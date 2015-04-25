@@ -27,4 +27,35 @@ module Emaxx
 		ff = t * Matrix[[1],[1]]
 		ff[1,0]
 	end
+
+	def self.mod_primes(m)
+		r = Array.new(m)
+		r[0] = 1
+		1...m.each {|i| r[i] = (m-(m/i)*r[m%i]%m)%m }
+		r
+	end
+end
+
+class Fixnum
+	def gray
+		self^(self>>1)
+	end
+
+	def gray_inv
+		g = self
+		n = 0
+		while g != 0
+			n ^= g
+			g >>= 1
+		end
+		n
+	end
+end
+
+class Fixnum
+	def mod_inv(m)
+		t = Emaxx.gcd_ext(self,m)
+		x, g = t[:x], t[:gcd]
+		return (g != 1) ? nil : ( x % m + m ) % m
+	end
 end
