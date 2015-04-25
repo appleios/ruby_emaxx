@@ -63,3 +63,7 @@ end
 class Fixnum
 	include Mod
 end
+
+class Bignum
+	include Mod
+end
