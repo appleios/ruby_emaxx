@@ -52,10 +52,14 @@ class Fixnum
 	end
 end
 
-class Fixnum
+module Mod
 	def mod_inv(m)
 		t = Emaxx.gcd_ext(self,m)
 		x, g = t[:x], t[:gcd]
 		return (g != 1) ? nil : ( x % m + m ) % m
 	end
+end
+
+class Fixnum
+	include Mod
 end
