@@ -53,7 +53,7 @@ class Fixnum
 	end
 end
 
-module ModularArithmethics
+module ModularArithmetic
 	def mod_inv(m)
 		t = Emaxx.gcd_ext(self,m)
 		x, g = t[:x], t[:gcd]
@@ -61,7 +61,7 @@ module ModularArithmethics
 	end
 
 	def mod_mul(other,m)
-		self * other %m
+		self * other % m
 	end
 
 	def mod_div(other,m)
@@ -78,11 +78,11 @@ module ModularArithmethics
 end
 
 class Fixnum
-	include ModularArithmethics
+	include ModularArithmetic
 end
 
 class Bignum
-	include ModularArithmethics
+	include ModularArithmetic
 end
 
 module Euler
