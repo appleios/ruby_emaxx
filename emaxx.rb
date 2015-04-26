@@ -1,4 +1,5 @@
 require 'matrix'
+require 'prime'
 
 module Emaxx
 
@@ -52,18 +53,40 @@ class Fixnum
 	end
 end
 
-module Mod
+module ModularArithmethics
 	def mod_inv(m)
 		t = Emaxx.gcd_ext(self,m)
 		x, g = t[:x], t[:gcd]
 		return (g != 1) ? nil : ( x % m + m ) % m
 	end
+
+	def mod_mul(other,m)
+		self * other %m
+	end
+
+	def mod_div(other,m)
+		self * other.mod_inv(m) % m
+	end
+
+	def mod_add(other,m)
+		(self + other)%m
+	end
+
+	def mod_sub(other,m)
+		(m + self - other % m ) % m
+	end
 end
 
 class Fixnum
-	include Mod
+	include ModularArithmethics
 end
 
 class Bignum
-	include Mod
+	include ModularArithmethics
+end
+
+module Euler
+	def phi(n)
+		
+	end
 end
