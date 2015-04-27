@@ -8,9 +8,9 @@ As soon as Ruby has very effective implementation of
 - primary numbers
 
 I've implemented:
-- fast evaluating of N'th fibonacci number, e.g. `Emaxx.fast_fib(10) # => 89`
-- inverse number by module, e.g. `5.mod_inv(3) # => 2`
-- gcd (Euclid's algorithm), e.g. `Emaxx.gcd(12,18) # => 6`
-- extended gcd, `Emaxx.gcd_ext(12,18) # => {:x => -1, :y => 1, :gcd => 6}`
-- lcm (using gcd), e.g. `Emaxx.lcm(12,18) # => 36`
-- Gray numbers, e.g. `12.gray # => 10; 10.gray_inv # => 12`
+- fast evaluating of N'th fibonacci number, e.g. `Emaxx.fast_fib(10) # => 89`. Complexity - `O(lgN)`.
+- inverse number by module, e.g. `5.mod_inv(3) # => 2`. Complexity - `O(lgN)`.
+- gcd (Euclid's algorithm), e.g. `Emaxx.gcd(12,18) # => 6`.
+- extended gcd, `Emaxx.gcd_ext(12,18) # => {:x => -1, :y => 1, :gcd => 6}`.
+- lcm (using gcd), e.g. `Emaxx.lcm(12,18) # => 36`.
+- Gray numbers, e.g. `12.gray # => 10; 10.gray_inv # => 12`.
